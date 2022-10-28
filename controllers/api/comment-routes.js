@@ -1,7 +1,7 @@
 //requireing everything for the apis
 const router = require('express').Router();
 const { Comment } = require('../../models/');
-const useAuth = require('./../utils/auth');
+const useAuth = require('./../');
 
 //router.post to make new comments
 router.post('/', useAuth, async (req, res) => {

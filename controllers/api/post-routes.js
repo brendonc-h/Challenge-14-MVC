@@ -1,7 +1,7 @@
 //require for express models
 const router = require('express').Router();
 const { Post } = require('../../models/');
-const useAuth = require('../../utils/auth');
+const useAuth = require('../../utils/Auth');
 
 //post route for new posts
 
