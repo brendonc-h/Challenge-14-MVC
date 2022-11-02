@@ -5,7 +5,7 @@ require('dotenv').config();
 
 //connection to the database
 let sequelize;
-if(ProcessingInstruction.env.JAWSDB_URL) {
+if(process.env.JAWSDB_URL) {
     sequelize = new
     Sequelize(process.env.JAWSDB_URL);
 }else {
