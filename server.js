@@ -32,6 +32,7 @@ const hnbs = exphbs.create({helpers});
 
 app.engine('handlebars', hnbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', './views')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
