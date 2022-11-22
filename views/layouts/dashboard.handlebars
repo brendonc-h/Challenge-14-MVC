@@ -1,49 +1,82 @@
+<html lang="en">
 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Tech Blog
+    </title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../public/style.css" />
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Tech Blog</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            {{!-- {{#if logged_in}} --}}
+              <a class="text-bg-success my-auto" href="/dashboard">Dashboard</a>
+
+              <li class="nav-item dropdown bg-success">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  My Account
+                </a>
+                <ul class="dropdown-menu bg-success">
+                  <li><a
+                      class="dropdown-item text-bg-success"
+                      href="/changePassword"
+                    >Change Password</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a
+                      id="logout"
+                      class="dropdown-item text-bg-success"
+                      href="#"
+                    >Logout</a></li>
+                </ul>
+              </li>
+
+            {{!-- {{else}} --}}
+              {{!-- <a class="btn text-bg-success" href="/login">Login</a> --}}
+            {{!-- {{/if}} --}}
+          </div>
+        </div>
+      </div>
+    </nav>
 
 <div class="vstack gap-2">
   <div class="col-11 p-2 mx-auto">
-    <div class="card border-success">
-      <div class="card-header bg-success text-white">
-        Post's
-      </div>
-      <div class="table-responsive">
-        <table class="table bg-light table-striped table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Title</th>
-              <th scope="col">Date Created</th>
-              <th scope="col">Owner</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each articles as |article|}}
-              <tr>
-                <th scope="row">{{id}}</th>
-                <td>{{title}}</td>
-                <td>{{format_datetime date_created}}</td>
-                <td>{{user.name}}</td>
-                <td><a
-                    href="/editArticle/{{id}}"
-                    class="btn btn-info btn-sm"
-                  >Edit</a></td>
-                <td>
-                  <a
-                    href="/deleteArticle/{{id}}"
-                    class="btn btn-danger btn-sm"
-                  >Delete</a></td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
-    </div>
+{{{body}}}
   </div>
   <div class="col-11 mb-2 mx-auto">
     <div class="d-flex justify-content-center mx-auto">
-      <a class="btn btn-success" href="/newpost">New Post</a>
+      <a class="btn btn-success" href="/dashboard/new">New Post</a>
     </div>
   </div>
 </div>
+</body>

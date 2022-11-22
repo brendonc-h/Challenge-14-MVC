@@ -11,7 +11,7 @@ router.get('/', useAuth, async (req, res) => {
         });
 
         const posts = postData.map((post) => post.get({ plain: true}));
-        res.render('all-posts-admin', {
+        res.render('dashboard-posts', {
             layout: 'dashboard',
             posts,
         });
