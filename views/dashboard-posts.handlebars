@@ -1,4 +1,4 @@
-   <div class="card border-success">
+    <div class="card border-success">
       <div class="card-header bg-success text-white">
         Post's
       </div>
@@ -15,11 +15,13 @@
             </tr>
           </thead>
           <tbody>
-            {{#each articles as |article|}}
+            {{!-- {{#each articles as |article|}} --}}
+            {{#each posts as |post|}}
               <tr>
-                <th scope="row">{{id}}</th>
-                <td>{{title}}</td>
-                <td>{{format_datetime date_created}}</td>
+                <th scope="row">{{post.id}}</th>
+                <td>{{post.title}}</td>
+                {{!-- <td>{{format_datetime date_created}}</td> --}}
+                <td></td>
                 <td>{{user.name}}</td>
                 <td><a
                     href="/editArticle/{{id}}"
@@ -27,7 +29,7 @@
                   >Edit</a></td>
                 <td>
                   <a
-                    href="/deleteArticle/{{id}}"
+                    href="/delete/{{id}}"
                     class="btn btn-danger btn-sm"
                   >Delete</a></td>
               </tr>
